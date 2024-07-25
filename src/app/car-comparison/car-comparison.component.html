@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>Car Comparison</h2>
+      <div *ngIf="selectedCars.length > 0" class="car-list">
+        <div *ngFor="let car of selectedCars" class="car-item">
+          <div class="car-image-container">
+            <img [src]="car.imageUrl" alt="{{ car.model }}" class="car-image">
+          </div>
+          <div class="car-details">
+            <div><strong>Manufacturer:</strong> {{ car.manufacturer }}</div>
+            <div><strong>Model:</strong> {{ car.model }}</div>
+            <div><strong>Year:</strong> {{ car.year }}</div>
+            <div><strong>Tire Size:</strong> {{ car.tireSize }}</div>
+            <div><strong>Fuel Tank Size:</strong> {{ car.fuelTankSize }}</div>
+            <div><strong>Info:</strong> {{ car.info }}</div>
+            <div><strong>Price:</strong> {{ car.price }}</div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="selectedCars.length === 0" class="no-cars-message">
+        <p>No cars selected for comparison.</p>
+      </div>
+      <div class="go-back-container">
+        <button (click)="goBack()" class="btn btn-secondary go-back-btn">Go Back</button>
+      </div>
+    </div>
+  </div>
+</div>

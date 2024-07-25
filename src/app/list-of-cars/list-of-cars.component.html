@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>List of Cars</h2>
+      <div class="car-list">
+        <div *ngFor="let car of cars" class="car-item">
+          <div class="car-image-container">
+            <img [src]="car.imageUrl" alt="Car Image" class="car-image">
+          </div>
+          <div class="car-details">
+            <div><strong>Manufacturer:</strong> {{ car.manufacturer }}</div>
+            <div><strong>Model:</strong> {{ car.model }}</div>
+            <div><strong>Year:</strong> {{ car.year }}</div>
+            
+            <input type="checkbox" [checked]="selectedCarIds.has(car.id)" (change)="toggleSelection(car)" /> Select for Comparison
+          </div>
+        </div>
+      </div>
+      <div class="compare-button-container">
+        <button (click)="goToComparison()" class="btn btn-secondary compare-btn">Compare Selected Cars</button>
+      </div>
+    </div>
+  </div>
+</div>

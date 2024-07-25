@@ -1,0 +1,14 @@
+.navbar {
+    margin-bottom: 20px;
+  }
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .navbar .container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, sans-serif;
+
+}
